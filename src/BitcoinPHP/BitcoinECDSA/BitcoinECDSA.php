@@ -225,7 +225,7 @@ class BitcoinECDSA
         $secondSha256   = hash('sha256', hex2bin($firstSha256));
         $secretKey     .= substr($secondSha256, 0, 8);
 
-        return strrev($this->base58_encode($secretKey));
+        return $this->base58_encode($secretKey);
     }
 
     /***
